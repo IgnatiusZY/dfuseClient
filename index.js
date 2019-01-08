@@ -23,13 +23,23 @@ const client = new EoswsClient(
     )
 )
 
+let contract, action = ""
+process.argv.forEach(function(value, index) {
+    if (index == 2) {
+        contract = value
+    }
+    if (index == 3) {
+        action = value
+    }
+})
+
 client
     .connect()
     .then(() => {
         client
-            .getActionTraces( { account: "eosio.token", action_name: "transfer" })
+            .getActionTraces( { account: contract, action_name: action })
             .onMessage((message) => {
-                if (message.type == InboundMessageType.ACTION_TRACE) {
+                if (action == "transfer" && message.type == InboundMessageType.ACTION_TRACE) {
                     const { from, to, quantity, memo } = message.data.trace.act.data
                     console.log(from, to, quantity, memo)
                 }
