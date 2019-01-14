@@ -34,21 +34,21 @@ process.argv.forEach(function(value, index) {
 const csvWriter = createCsvWriter({
     path: 'outputlog.csv',
     header: [
-        {id: 'index', title: 'Index'},
-        {id: 'timestamp', title: 'Timestamp'},
+        {id: 'index',         title: 'Index'},
+        {id: 'timestamp',     title: 'Timestamp'},
         {id: 'transfer_from', title: 'From'},
-        {id: 'transfer_to', title: 'To'},
+        {id: 'transfer_to',   title: 'To'},
         {id: 'transfer_memo', title: 'Memo'},
-        {id: 'transfer_val', title: 'Value'}
+        {id: 'transfer_val',  title: 'Value'}
     ]
 });
 
 var options = {
     start_block: start_block_val,
     block_count: block_count_val,
-    limit: limitVal,
-    sort: sortVal,
-    q: sqe
+    limit:       limitVal,
+    sort:        sortVal,
+    q:           sqe
 };
 
 request(
