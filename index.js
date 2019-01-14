@@ -41,9 +41,7 @@ client
             .onMessage((message) => {
                 if (action == "transfer" && message.type == InboundMessageType.ACTION_TRACE) {
                     const { from, to, quantity, memo } = message.data.trace.act.data
-                    if (to == "emanateaudio") {
-                        console.log(from, to, quantity, memo)                        
-                    }
+                    console.log(from, to, quantity, memo)                        
                 }
             })
     })
