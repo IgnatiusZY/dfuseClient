@@ -18,6 +18,10 @@
   "homepage": "https://github.com/ignatiusrevi/dfuseClient#readme",
   "dependencies": {
     "@dfuse/eosws-js": "^0.11.6",
+    "csv-writer": "^1.2.0",
+    "fast-csv": "^2.4.1",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0",
     "ws": "^6.1.2"
   }
 }
