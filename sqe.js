@@ -24,14 +24,6 @@ process.argv.forEach(function(value, index) {
     }
 });
 
-var options = {
-    start_block: start_block_val,
-    block_count: block_count_val,
-    limit: limitVal,
-    sort: sortVal,
-    q: sqe
-};
-
 // request(
 //     {url: `https://${endpoint}/v0/search/transactions`, 
 //     qs: options, 
@@ -50,6 +42,14 @@ const csvWriter = createCsvWriter({
         {id: 'transfer_val', title: 'Value'}
     ]
 });
+
+var options = {
+    start_block: start_block_val,
+    block_count: block_count_val,
+    limit: limitVal,
+    sort: sortVal,
+    q: sqe
+};
 
 request(
     {url: `https://${endpoint}/v0/search/transactions`, 
