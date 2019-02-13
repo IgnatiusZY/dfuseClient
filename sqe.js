@@ -5,9 +5,9 @@ const endpoint = "mainnet.eos.dfuse.io";
 // const endpoint = "jungle.eos.dfuse.io";
 // const endpoint = "kylin.eos.dfuse.io";
 
-const token = "eyJhbGciOiJLTVNFUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NDk1MjAzMTIsImp0aSI6Ijk4ODIxYmI4LWVhMmQtNDNlYS04M2ViLTJmMGI4NDY1MmFhMCIsImlhdCI6MTU0NjkyODMxMiwiaXNzIjoiZGZ1c2UuaW8iLCJzdWIiOiJDaVFBNmNieWU1czFpTkFwU0RUZEtLNHZFRUpUNlYvNHU3VE85QlpTR1ZCbjd4d0RuZmNTUGdBL0NMUnR3VEJDdmtqZHdSRmphbjAzY1ErMWpGQ05wOU84UDgzd0V2NFhRM29hOW53TWJieU14anozdlo3S01vN0Q0bXlYYXdjdTNDZGlOZkRzIiwidGllciI6ImJldGEtdjEiLCJ2IjoxfQ.GLbcuQ32cpyZUw1O0qNsMOMngwxeeV-5PQetFFyZ0bvAEcbwm2RQpHslUCqf0AkG6eCfMEpdB2SZMqpScqDGpg";
+const token = "eyJhbGciOiJLTVNFUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTI2MTg0MzgsImp0aSI6IjM2OTc1OGI1LWY3MDctNDkyNy1hOGQ5LWVjZmY0ZTk3ODQ5ZSIsImlhdCI6MTU1MDAyNjQzOCwiaXNzIjoiZGZ1c2UuaW8iLCJzdWIiOiJDaVFBNmNieWU4QjlIZVVlNWR0U0NWaVhrL3pvOGFRbDBKRWF1VW1Dd3ZhVzBPQzNQWGtTUGdBL0NMUnRkMXJSSXBVbDk1cFBzclpNRDU0Szc4RWhHVTJrOVBSVEVETnRnSjhKb21mV3dtMmg0RjdJNmZ3N0ZRRFZIaUVRWUx0K25FRUZXMGhWIiwidGllciI6ImJldGEtdjEiLCJ2IjoxfQ.awnQTgDcnr6yGTa3u_n6Pn6qyE1PwPHCUcM6vNsMGrQRZ28V3zo-8hDx_Gb8GvjYaSS8P05B0oD3ItNLegLbiQ";
 
-let start_block_val=0, block_count_val=10000, limitVal=500, sortVal='asc', sqe='receiver:eosio.token action:transfer data.to:emanateaudio';
+let start_block_val=0, block_count_val=42492125, limitVal=100, sortVal='asc', sqe='receiver:emanateoneos action:transfer data.from:emanateissue';
 process.argv.forEach(function(value, index) {
     switch (index) {
         case 2:
@@ -58,6 +58,7 @@ request(
         'Authorization': `Bearer ${token}`
     }
 }, function(error, response, data) {
+    console.log('Data: ', data);
     if (error) {
         console.log('Request Error: ', error);
     }
